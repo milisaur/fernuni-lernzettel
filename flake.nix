@@ -13,33 +13,44 @@
 
     pkgs = import nixpkgs {
       inherit system;
+      config.permittedInsecurePackages = [
+        "electron-38.8.4"
+      ];
     };
 
-    r = pkgs.rWrapper.override {
-      packages = with pkgs.rPackages; [
-        knitr
-        rmarkdown
+    rPackages = with pkgs.rPackages; [
+      knitr
+      rmarkdown
 
-        tidyverse
-        gmodels
-        ggplot2
-        psych
-        Rmisc
-        boot
-        effectsize
-        pwr
-        lm_beta
-      ];
+      tidyverse
+      ggplot2
+      gmodels
+      boot
+      psych
+      effectsize
+      pwr
+      Rmisc
+      lm_beta
+    ];
+
+    myR = pkgs.rWrapper.override {
+      packages = rPackages;
+    };
+
+    myRStudio = pkgs.rstudioWrapper.override {
+      packages = rPackages;
     };
   in {
     devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [
-        quarto
-        r
+      packages = [
+        myR
+        myRStudio
+        pkgs.quarto
       ];
+
       shellHook = ''
-        export PATH="${r}/bin:$PATH"
-        export QUARTO_R="${r}/bin/R"
+        export PATH="${myR}/bin:$PATH"
+        export QUARTO_R="${myR}/bin/R"
       '';
     };
   };
