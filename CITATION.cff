@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-title: "fernuni-hagen-lernzettel"
-message: "If you use this repository, please cite it."
+title: "fernuni-lernzettel"
+message: "Wenn du dieses Repository verwendest, zitiere es bitte so."
 type: software
 authors:
   - family-names: "Hahlbrock"
     given-names: "Emilian"
-repository-code: "https://github.com/milisaur/statistik-m2-lernzettel"
+repository-code: "https://github.com/milisaur/fernuni-lernzettel"
 license: "CC-BY-NC-SA-4.0"

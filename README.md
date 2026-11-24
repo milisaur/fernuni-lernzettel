@@ -6,22 +6,38 @@
 >
 > Diese Unterlagen sind privat erstellt und nicht offiziell von der FernUniversität herausgegeben.
 
-> Die aktuelle Originalversion befindet sich unter:
->
-> https://github.com/milisaur/fernuni-hagen-lernzettel
-
 ## Inhalte
 
-- Deskriptive Statistik
-- Inferenzstatistik
-- NHST
-- Effektgrößen
+### Vorhanden
+
+**Deskriptive Statistik** (`notes/deskriptiv.qmd`)
+
+- Häufigkeiten, Tabellen und Grafiken
+- Skalenniveaus
+- Lage- und Streuungsmaße
+- Quantile, Perzentile und z-Transformation
+- Kovarianz und Korrelation
+- Kreuztabellen und Rangkorrelation
+- Einfache Regression
+
+**Inferenzstatistik und NHST** (`notes/NHST.qmd`)
+
+- Wahrscheinlichkeit und Stichprobenverteilungen
 - Konfidenzintervalle
-- Bayes-Theorem
-- R-Code-Beispiele
-- ggplot2
-- Bootstrap-Verfahren
-- Regressionsanalyse
+- NHST, Fehlerarten und Power
+- Effektgrößen
+- t-Tests und einfaktorielle Varianzanalyse
+- Inferenzstatistik von Korrelation und Regression
+- F-Test und Chi-Quadrat-Test
+- Bayes-Faktoren
+- Bootstrap und Permutationstests
+
+Die R-Beispiele stehen direkt in den Lernzetteln.
+
+### Geplant
+
+- Eigenständige R-Skripte in `examples/r-code/`
+- Grafiken mit ggplot2
 
 ## Ziel
 
@@ -39,10 +55,8 @@ Der Fokus liegt auf:
 | Ordner | Inhalt |
 |---|---|
 | `notes/` | Lernzettel und Erklärungen |
-| `examples/r-code/` | R-Code-Beispiele |
-| `examples/data/` | freie Beispieldatensätze |
+| `examples/r-code/` | R-Code-Beispiele (geplant) |
 | `exports/` | gerenderte PDFs/HTML-Dateien |
-| `assets/` | Bilder und Grafiken |
 | `scripts/`| ausführbare Skripts |
 
 ## Verwendete Datensätze
@@ -62,7 +76,7 @@ nix develop
 
 Die benötigten R-Pakete werden automatisch bereitgestellt.
 
-## Requirements 
+## Voraussetzungen
 
 - Nix mit Flakes aktiviert
 - Git
@@ -113,15 +127,15 @@ Geschützte Uni-Datensätze, Musterlösungen oder urheberrechtlich problematisch
 
 ## Autor
 
-Created and maintained by Emilian Hahlbrock.
+Erstellt und gepflegt von Emilian Hahlbrock.
 
 - GitHub: https://github.com/milisaur
-- Issues & corrections: Please open a GitHub Issue
-- Contact: milisaur@proton.me
+- Fehler und Korrekturen: bitte als GitHub Issue melden
+- Kontakt: milisaur@proton.me
 
 ## Feedback & Kontakt
 
-Fragen, Fehlerkorrekturen und Verbesserungsvorschläge bitte über GitHub Issues oder pull requests.
+Fragen, Fehlerkorrekturen und Verbesserungsvorschläge bitte über GitHub Issues oder Pull Requests.
 
 Für Nachhilfeanfragen:
 
