@@ -16,7 +16,7 @@ editor:
 
 # Inferenzstatistik und NHST
 
-> Version: v1.0 Letzte Aktualisierung: 01.06.2026
+> Version: v1.0 Letzte Aktualisierung: 10.06.2026
 
 ```{r echo=FALSE}
 system("git log -1 --date=short --format='%cd'", intern = TRUE)
@@ -1206,21 +1206,21 @@ Bestimmen, wie groß $n$ sein muss, um einen Effekt zu entdecken
 
 - Effektgröße $d$
 - Stichprobengröße
-- Signifikanzniveau $a$
+- Signifikanzniveau $\alpha$
 - gewünschte Power
 
 Größerer Effekt → höhere Power
 
 Größeres $n$ → höhere Power
 
-Kleineres $a$ → geringere Power
+Kleineres $\alpha$ → geringere Power
 
 ### Standardwert
 
 Häufig:
 
 $$1 - \beta = 0.80$$
-i → 80% Wahrscheinlichkeit, einen Effekt zu entdecken
+→ 80% Wahrscheinlichkeit, einen Effekt zu entdecken
 
 ## 13.6 Interpretation des p-Wertes
 
@@ -1265,13 +1265,13 @@ $$p \le \alpha$$
 
 #### Unrealistische Nullhypothesen
 
-- exact 0 oft unrealistisch
+- exakt 0 oft unrealistisch
 
 ## 13.8 Alternativen:
 
 ### Obergrenze Bayes-Faktor
 
-$$BayesfaktorB = \frac{p(D|H_1)}{p(D|H_0)}$$
+$$B = \frac{p(D|H_1)}{p(D|H_0)}$$
 
 Vergleicht:
 
@@ -1283,11 +1283,13 @@ Großer Wert: → Evidenz für $H_1$
 
 $$B \le \bar{B} = \frac{1}{-e \cdot p \cdot ln(p)}$$
 
+→ gilt nur für $p < 1/e \approx 0.37$
+
 ```{r}
 1 / (-exp(1) * 0.00047 * log(0.00047))
 ```
 
-→ berechnet den $e$-Wert aus einem bereits bekannten p-Wert
+→ berechnet $\bar{B}$ aus einem bereits bekannten p-Wert
 
 #### Direkte Berechnung aus einem t-Test
 
@@ -1297,13 +1299,13 @@ t <- t.test(mtcars$mpg, mu = 20)
 1 / (-exp(1) * t$p.value * log(t$p.value))
 ```
 
-→ berechnet den $e$-Wert direkt aus dem p-Wert des Tests
+→ berechnet $\bar{B}$ direkt aus dem p-Wert des Tests
 
 #### Bedeutung
 
-Der $e$-Wert beschreibt die maximale Evidenz gegen die Nullhypothese.
+$\bar{B}$ ist die Obergrenze des Bayes-Faktors für $H_1$ gegen $H_0$.
 
-Große Werte sprechen für stärkere Evidenz gegen $H_0$.
+→ mehr Evidenz für $H_1$ kann dieser p-Wert nicht liefern
 
 ### Shannon-Information (s-Wert)
 
@@ -1312,7 +1314,7 @@ $$S = - log_2(p)$$
 ### Interpretation:
 
 - Evidenz gegen $H_0$
-- vergleichbar mit mehrfach "Kopf" bei Münzwurd
+- vergleichbar mit mehrfach "Kopf" beim Münzwurf
 
 ### Berechnung in R
 
@@ -3053,7 +3055,7 @@ perm.diff <- numeric(B)
 for(i in 1:B){
 
   # Gruppenlabels zufällig mischen
-  perm.gruppe <- sample(daten$gruppe)
+  perm.gruppe <- sample(daten$group)
 
   # neue Mittelwertsdifferenz
   perm.diff[i] <-

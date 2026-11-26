@@ -41,14 +41,10 @@ Die R-Beispiele stehen direkt in den Lernzetteln.
 
 ## Ziel
 
-Dieses Repository soll verständliche, kompakte und nachvollziehbare Lernunterlagen bereitstellen.
+Kompakte Lernzettel für M2 → Verständnis statt Auswendiglernen.
 
-Der Fokus liegt auf:
-
-- Verständnis statt Auswendiglernen
-- praktischen R-Beispielen
-- nachvollziehbaren Herleitungen
-- sauber dokumentierten statistischen Verfahren
+- Herleitungen Schritt für Schritt
+- jedes Verfahren mit R-Beispiel
 
 ## Struktur
 
@@ -95,6 +91,12 @@ PDF rendern:
 quarto render notes/NHST.qmd --to pdf
 ```
 
+Alle Lernzettel als HTML und PDF:
+
+```bash
+./scripts/render.sh
+```
+
 ## Lizenz
 
 ### Lernzettel und Texte
@@ -104,14 +106,7 @@ Alle Lernzettel, Erklärungen und Markdown-/Quarto-Dateien stehen unter:
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International  
 (CC BY-NC-SA 4.0)
 
-Kurz gesagt:
-
-- Nutzung erlaubt
-- Weitergabe erlaubt
-- Änderungen erlaubt
-- Namensnennung erforderlich
-- keine kommerzielle Nutzung
-- gleiche Lizenz bei Weiterveröffentlichung
+→ teilen und bearbeiten mit Namensnennung, nicht kommerziell, Bearbeitungen unter derselben Lizenz
 
 ### Code-Beispiele
 
@@ -119,24 +114,11 @@ Alle Dateien im Ordner `examples/r-code/` stehen unter der MIT-Lizenz.
 
 ## Hinweis
 
-Dieses Repository enthält keine offiziellen Unterlagen der FernUniversität in Hagen.
+Keine Uni-Datensätze, keine Musterlösungen. Alle Beispiele laufen mit den Datensätzen oben.
 
-Es handelt sich ausschließlich um privat erstellte Lernunterlagen.
+## Kontakt
 
-Geschützte Uni-Datensätze, Musterlösungen oder urheberrechtlich problematische Inhalte wurden entfernt bzw. ersetzt.
+Emilian Hahlbrock – [github.com/milisaur](https://github.com/milisaur)
 
-## Autor
-
-Erstellt und gepflegt von Emilian Hahlbrock.
-
-- GitHub: https://github.com/milisaur
-- Fehler und Korrekturen: bitte als GitHub Issue melden
-- Kontakt: milisaur@proton.me
-
-## Feedback & Kontakt
-
-Fragen, Fehlerkorrekturen und Verbesserungsvorschläge bitte über GitHub Issues oder Pull Requests.
-
-Für Nachhilfeanfragen:
-
-milisaur@proton.me
+- Fehler und Verbesserungen → Issue oder Pull Request
+- Fragen und Nachhilfe → milisaur@proton.me

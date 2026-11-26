@@ -15,7 +15,7 @@ format:
 # Deskriptive Statistik
 
 > Version: v1.0
-> Letzte Aktualisierung: 01.06.2026
+> Letzte Aktualisierung: 10.06.2026
 
 ```{r echo=FALSE}
 system("git log -1 --date=short --format='%cd'", intern = TRUE)

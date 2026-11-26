@@ -49,3 +49,5 @@ Session.vim
 
 
 /.quarto/
+
+**/*.quarto_ipynb
